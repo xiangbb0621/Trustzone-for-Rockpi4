@@ -407,3 +407,5 @@
 464	common	getxattrat			sys_getxattrat
 465	common	listxattrat			sys_listxattrat
 466	common	removexattrat			sys_removexattrat
+500     common  my_add_one		        sys_my_add_one
+
