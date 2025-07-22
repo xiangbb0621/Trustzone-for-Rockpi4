@@ -1319,4 +1319,5 @@ int __sys_setsockopt(int fd, int level, int optname, char __user *optval,
 #endif
 
 asmlinkage long sys_my_add_one(int x);
+asmlinkage long sys_week2_add_one(int x);
 

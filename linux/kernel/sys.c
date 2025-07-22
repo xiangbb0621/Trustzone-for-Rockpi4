@@ -2983,4 +2983,12 @@ SYSCALL_DEFINE1(my_add_one, int, x)
     printk(KERN_INFO "my_add_one called with x = %d\n", x);
     return x + 1;
 }
+#define SMC_CUSTOM_ADD_ONE 0x82000001
+SYSCALL_DEFINE1(week2_add_one, int, x)
+{
+    struct arm_smccc_res res;
+    arm_smccc_smc(SMC_CUSTOM_ADD_ONE, x, 0, 0, 0, 0, 0, 0, &res);
+    printk(KERN_INFO "Input = %d, Output = %lx\n",x , res.a0);
 
+    return res.a0;
+}
